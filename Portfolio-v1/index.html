@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reece Langerock</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script>
+$.get("navigation.html", function(data){
+    $("#nav-placeholder").replaceWith(data);
+});
+</script>
+
+
+
+</head>
+
+
+<body>
+<div id = "nav-placeholder"></div>
+
+
+<main>
+<div class = "name-Container">
+  <h1 style="font-size:50px">Reece Langerock</h1>
+  <h3>Front-End Developer</h2>
+
+</div>
+<div class = "socialMediaButtons">
+<a href ="https://github.com/ReeceLangerock"><button>GitHub</button></a>
+<a href ="https://www.linkedin.com/in/reece-langerock-6aab1917"><button>LinkedIn</button></a>
+<a href ="https://www.freecodecamp.com/reecelangerock"><button>FCC</button></a>
+<button>Open Badges</button>
+</div>
+
+</main>
+</body>
+</html>

@@ -1,0 +1,113 @@
+:root{
+  --figureCount:5;
+  --figureWidth:350px;
+  --transZ:320px;
+  --rotY:0;
+}
+
+body {
+
+  padding: 150px 0;
+  font: 15px/20px Arial, sans-serif;
+}
+
+.container {
+  margin: 0 auto;
+  width: 350px;
+  height: 350px;
+  position: relative;
+  perspective: 1200px;
+}
+
+.carousel {
+  height: 900%;
+  width: 100%;
+  position: absolute;
+  transform-style: preserve-3d;
+  transition: transform 1s;
+}
+
+.item {
+  background: radial-gradient(circle at 100px 100px, #5cabff, #000);
+  display: block;
+  position: absolute;
+  width: 350px;
+  height: 350px;
+  line-height: 250px;
+  font-size: 5em;
+  text-align: center;
+  color: #FFF;
+  border-radius: 50%;
+  background: url(earthmap.jpg) 0 0 repeat;
+  background-size: 630px;
+  animation: rotate 4s linear infinite;
+  transition: transform 200ms linear;
+  transform-style: preserve-3d;
+  box-shadow: inset 20px 0 80px 6px rgba(0, 0, 0, 1);
+  color: #000;
+}
+
+.item:after {
+  content: "";
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  box-shadow: -80px 15px 80px 10px rgba(0,0,0,.6) inset;
+}
+
+.item:before {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  opacity: 0.2;
+  background: radial-gradient(circle at 100px 100px, #fff, #000);
+}
+
+.portfolio {
+  transform: rotateY(0deg) translateZ(var(--transZ));
+  background: #ed1c24;
+}
+.aboutMe {
+  transform: rotateY(72deg) translateZ(var(--transZ));
+  background: #0072bc;
+}
+.contactMe {
+  transform: rotateY(144deg) translateZ(var(--transZ));
+  background: #39b54a;
+}
+.social {
+  transform: rotateY(216deg) translateZ(var(--transZ));
+  background: #f26522;
+}
+.other {
+  transform: rotateY(288deg) translateZ(var(--transZ));
+  background: #630460;
+}
+
+
+.next, .prev {
+  color: #444;
+  position: absolute;
+  top: 100px;
+  padding: 1em 2em;
+  cursor: pointer;
+  background: #CCC;
+  border-radius: 5px;
+  border-top: 1px solid #FFF;
+  box-shadow: 0 5px 0 #999;
+  transition: box-shadow 0.1s, top 0.1s;
+}
+.next:hover, .prev:hover { color: #000; }
+.next:active, .prev:active {
+  top: 104px;
+  box-shadow: 0 1px 0 #999;
+}
+.next { right: 5em; }
+.prev { left: 5em; }
